@@ -1,0 +1,723 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>tourism</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" >
+    <link rel="stylesheet" href="C:\Users\shank\Downloads\bootstrap-5.0.2-dist\bootstrap-5.0.2-dist\css\bootstrap.min.css.map">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="@import url('https://fonts.googleapis.com/css2?family=Rubik+Maps&display=swap');">
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Rubik+Maps&display=swap');
+      body{
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+        list-style: none;
+        box-sizing: border-box;
+        
+        
+        }
+        .navbar-nav{
+        font-size:20px;
+        margin-left: auto;
+        font-weight: 500;
+        padding: 0px; 
+        
+        
+      }
+      #slide{
+        filter: brightness(90%);
+        
+      }
+      .navbar-nav  li a{
+        padding: 25px;
+        font-size: 22px;
+        text-align: center;
+        justify-content: center;
+      }
+     
+      .container-fluid .navbar-brand{
+        font-size: 25px;
+        font-weight: 600;
+        font-family: Arial, Helvetica, sans-serif;
+        color: rgb(26, 26, 27);
+        text-shadow: 1px 1px 1px rgb(214, 146, 141); 
+        /* background-color: blue; */
+        margin-left: 140px;
+                     
+      }
+      #logo{
+       width: 80px;
+       height: auto;
+       font-family: 'Tangerine', serif;
+      color: #af2929;
+      font-size: 30px;
+      text-shadow: 4px 4px 4px #aaa;
+      text-decoration: none;
+      
+      }
+    /*----------------------------- cart section------------------------------- */
+
+    .sub-title{
+      margin: 50px 0 20px ;
+      font-size: 25px;
+      font-weight: 500;
+      color: rgb(10, 8, 8);
+    }
+    .exclusive{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px,1fr));
+      
+      grid-gap: 30px;
+    }
+    .exclusive div img{
+      width: 100%;
+      border-radius: 15px;
+      filter:brightness(50%);
+      transition: 0.5s;
+    }
+    .exclusive div img:hover{
+      transform: scale(1.1);
+
+
+    }
+    .exclusive div{
+      position: relative;
+    }
+    .exclusive div span{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      text-align: center;
+      color: rgb(255, 255, 255);
+      cursor: pointer;
+      
+    }
+    .exclusive div span h3{
+      font-weight: 700;
+    }
+    /* -----------------------trending places----------------------- */
+    .sub-title{
+      margin: 50px 0px 20px;
+      font-size: 25px;
+      font-weight: 600;
+      color: rgb(10, 8, 8);
+    }
+    .trending{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+      grid-gap: 30px;
+    }
+    .trending div img{
+      
+      border-radius: 15px;
+      filter: brightness(80%);
+      transition: 0.5s;
+    }
+    .trending div h3{
+      font-family: 'Tangerine', serif;
+      /* color: rgb(255, 255, 255); */
+      font-size: 45px;
+      text-shadow: 4px 4px 4px #aaa;
+      font-weight: 600;
+
+    }
+    .trending div{
+      position: relative;
+    }
+    .trending div span{
+      position: absolute;
+      top: 50%;
+      left: 40%;
+      transform: translate(-50%,-50%);
+      text-align: center;
+      color: rgb(255, 255, 255);
+      
+    }
+    .cta{
+      margin: 80px 0;
+      background-image: linear-gradient(to right, #3f2321, transparent),url(image/login\ back.jpg);
+      color: white;
+      background-size: cover;
+      background-position: center;
+      border-radius: 10px;
+      padding: 5%;
+      
+    }
+    .cta h3{
+      font-size: 30px;
+      font-weight: 600;
+      color: white;
+    }
+    .btn-cta{
+      background: #ff5361;
+      color: white;
+      text-decoration: none;
+      padding: 12px 30px;
+      border-radius: 8px;
+      margin-top: 20px;
+      display: inline-block;
+    }
+
+    /* ----------------------------------------swiper------------------------------------------ */
+
+    .swiper {
+      width: 110%;
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+
+    .swiper-slide {
+      background-position: center;
+      background-size: cover;
+      width: 300px;
+      height: 500px;
+      margin: 30px;
+    }
+
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      
+    }
+    .trip h1{
+      text-align: center;
+      padding: 90px;
+      font-weight: 600;
+      font-family: Rubik Maps;
+      letter-spacing: 6px;
+
+    }
+    .trip h1 span{
+      color: #af2929;
+      font-size: 44px;
+    }
+
+    .trip p{
+      text-align: center;
+      font-size: 25px;
+      font-weight: 500;
+    }
+
+    /*------------------------------------- Rigister Form --------------------------------------*/
+
+    /* .container-2 {
+    text-align: center;
+    padding: 50px;
+} */
+
+ .popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.7);
+    padding: 450px;
+    z-index: 1;
+    min-height: 100vh;
+    width: 100%;
+    transition: top 0ms  ease-in-out 200ms,
+                opacity 200ms ease-in-out 0ms,
+                transform 20,s ease-in-out 0ms;
+    }
+    
+
+/* .popup-content {
+    text-align: center;
+    justify-content: center;
+    width: 300px;
+    height: 400px;
+    background: white;
+} */
+ .popup-content {
+      margin: 32px;
+      padding: 24px 32px;
+      border-radius: 8px;
+      background: white;
+      width: 580px;
+      height: auto;
+      align-items: center;
+      justify-content: center;
+      
+}
+.close {
+  position: absolute;
+  top: 310px; right: 30px;
+  font-size: 50px;
+  color: white;
+  cursor: pointer;
+}
+
+.close:hover {
+    color: #ff0000;
+}
+.chech-box{
+  margin: 30px 10px 30px 0;
+}
+span{
+  color: rgb(68, 75, 67);
+  font-size: 15px;
+  cursor: pointer;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+} 
+
+/* input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 20px;
+} */
+ .input-field{
+  width: 100%;
+      padding: 10px 0;
+      margin: 5px 0px;
+      border: 0;
+      border-bottom: 1px solid#777;
+      outline: none;
+}
+
+.submit-btn{
+      width: 65%;
+      padding: 10px 30px;
+      cursor: pointer;
+      display: block;
+      margin: auto;
+      background: linear-gradient(to right, #ff105f,#ffad06);
+      outline: none;
+      border: 0;
+      border-radius: 30px;
+      }
+.register-form-container form h3{
+  font-size: 34px;
+  color: #444;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 16px 0;
+}
+
+
+      
+        
+    /* --------------------------------------footer--------------------------------------- */
+    .footer{
+      background-color: #24262b;
+      padding: 70px;
+    }
+    ul{
+      list-style: none;
+      transform: 0.5s;
+    }
+    .container-1{
+      max-width: 1180px;
+      margin: auto;
+      
+    }
+    .footer .container-1 .row{
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .f-col ul li:not(:last-child){
+      margin-bottom: 10px;
+    }
+    .f-col{
+      width: 25%;
+      padding: 0 15px;
+    }
+    
+    ul li a{
+      text-decoration: none;
+      color: rgb(126, 126, 126);
+      font-weight: 500;
+      
+    }
+    footer .f-col{
+      width: 25%;
+      padding: 0 15px;
+    }
+    .f-col h4{
+      color: white;
+      font-size: 18px;
+      text-transform: capitalize;
+      margin-bottom: 35px;
+      font-weight: 600;
+      position: relative;
+      padding-left: 28px;
+    }
+    .f-col h4::before{
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      background-color: #e91e63;
+      height: 2px;
+      box-sizing: border-box;
+      width: 50px;
+      padding-left: 28px;
+    }
+    .f-col ul li :hover{
+      color: white;
+      text-transform: capitalize;
+      padding: 17px;
+    }
+   
+    .f-col .social a{
+      display: inline-block;
+      height: 40px;
+      width: 40px;
+      background-color: white;
+      margin: 0 10px 10px 0;
+      text-align: center;
+      line-height: 40px;
+      border-radius: 50%;
+      color: white;
+    }
+    .f-col .social a:hover{
+      background-color: #2ceebd;
+    }
+    
+    </style>
+  </head>
+  
+  <body>
+    <nav class="navbar navbar-expand-sm  " >
+      <div class="container-fluid" style="position: sticky; 
+      ">
+        <img class="navbar-brand " id="logo" src="image/logo.jpg" ><a href="#" id="logo" >pbn tourism</a></img>
+        <button class="navbar-toggler btn border none " type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link " aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#cart">Destination</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Offers</a>
+            </li>
+            <!-- <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li> -->
+            <li class="nav-item">
+              <a class="nav-link" id="li" href="#">About</a>
+            </li>
+           
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+    <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" colour="white" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="4" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active " data-bs-interval="4000">
+          <img src="image/pexels-pixabay-2363.jpg" class="d-block w-100" height="600vh" >
+          <div class="carousel-caption d-none d-md-block">
+            <h2></h2>
+            <p style="font-size: 26px;  font-weight: 600; color: white;">“Jobs fill your pocket, but adventures fill your soul.”</p>
+          </div>
+        </div>
+        <div class="carousel-item " data-bs-interval="4000">
+          <img src="image/slide 5.png" class="d-block w-100" height="600vh" id="slide">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Second slide label</h5>
+            <p style="font-size: 26px;  font-weight: 600; color: rgb(26, 11, 11) ; ">“Take only memories, leave only footprints.”</p>
+          </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="4000">
+          <img src="image/slide 2.png" class="d-block w-100 " height="600vh" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Third slide label</h5>
+            <p style="font-size: 30px;  font-weight: 600; color: rgb(0, 0, 0);">“The goal is to die with memories not dreams.”</p>
+          </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="4000">
+          <img src="image/login back.jpg" class="d-block w-100 " height="600vh" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Third slide label</h5>
+            <p style="font-size: 30px;  font-weight: 600; color: rgb(0, 0, 0);">“The goal is to die with memories not dreams.”</p>
+          </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="4000">
+          <img src="image/slide 4.png" class="d-block w-100 " height="600vh" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Third slide label</h5>
+            <p style="font-size: 30px;  font-weight: 600; color: rgb(0, 0, 0);">“The goal is to die with memories not dreams.”</p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <!------------------------------------------------- cart  section----------------------------------------------->
+
+    <div class="container">
+      <h2 class="sub-title" id="cart">Exclusive</h2>
+      <div class="exclusive">
+        <div>
+          <img src="image/india.jpg" width="400px" height="250px" >
+          <span>
+            <h3>India</h3>
+            <p>Starts @ $300</p>
+          </span>
+        </div>
+        <div>
+          <img src="image/canada.jpg" width="400px" height="250px">
+          <span>
+            <h3>Canada</h3>
+            <p>Starts @ $500 </p>
+          </span>
+        </div>
+        <div>
+          <img src="image/china.jpeg" width="400px" height="250px">
+          <span>
+            <h3>China</h3>
+            <p>Starts @ $$300 </p>
+          </span>
+        </div>
+        <div>
+          <img src="image/new york.jpg" width="400px" height="250px">
+          <span>
+            <h3>New York</h3>
+            <p>Starts @ $250</p>
+          </span>
+        </div>
+        <div>
+          <img src="image/ireland.jpg" width="400px" height="250px">
+          <span>
+            <h3>Ireland</h3>
+            <p>Starts @ $330</p>
+          </span>
+        </div>
+        <div>
+          <img src="image/paris1.jpg" width="400px" height="250px">
+          <span>
+            <h3>Paris</h3>
+            <p>Starts @ $430</p>
+          </span>
+        </div>
+        
+      </div>
+
+       <!--------------------------------------------- swiper section ------------------------------------------------------------>
+       <section class="trip">
+        <div class="title">
+          <h1>Plan  <span>Your</span> <br/>
+            Trip With US</h1>
+            <p>Experience The Famous National Park- Phang Nga Bay on a Luxury Cruise Equipped with a "Full Bar, Day Beds, DJ and Dance Floor". 
+              Visit Maldives and Explore the Sea Caves of Sea house.Enjoy a beautiful Sunset Ocean Panorama While Having Dinner Onboard</p>
+        </div>
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="swiper img/1 (2).jpg" />
+          </div>
+          <div class="swiper-slide  lio">
+            <img src="swiper img/2.jpg" />
+          </div>
+          <div class="swiper-slide">
+            <img src="swiper img/3.jpg" />
+          </div>
+          <div class="swiper-slide">
+            <img src="swiper img/5.jpg" />
+          </div>
+          <div class="swiper-slide">
+            <img src="swiper img/7.jpg" />
+          </div>
+          <div class="swiper-slide">
+            <img src="swiper img/6.jpg" />
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </section>
+
+  <!------------------------------------------------- trending places ----------------------------------------------------------->
+
+      <div class="container1">
+        <h2 class="sub-title">Trending Places</h2>
+        <div class="trending">
+          <div>
+            <img src="trending places/dubai.jpg" width="250px" height="350px">
+            <span>
+            <h3>Dubai</h3>
+            </span>
+          </div>
+          <div>
+            <img src="trending places/maldives.jpg" width="250px" height="350px" >
+            <span>
+            <h3>Maldives</h3>
+            </span>
+          </div>
+          <div>
+            <img src="trending places/india.jpg" width="250px" height="350px">
+            <span>
+            <h3>India</h3>
+            </span>
+          </div>
+          <div>
+            <img src="trending places/sweeden.jpg" width="250px" height="350px">
+            <span>
+            <h3>Sweeden</h3>
+            </span>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- ---------------------------------------------------CTA--------------------------------------------------->
+
+      <div class="cta">
+        <h3>Travel<br> your money will return,<br> your time won’t</h3>
+        <p>We often tend to forget this ourselves, but time is actually one of the most precious possessions we have in this world. After all, the time that passes will never return. The following travel proverb also fits nicely</p>
+        <a href="#popup"class="btn-cta" id="loginBtn">Rigister Now</a>
+      </div>
+    </div>
+      <!--------------------------------------------- Rigister Form ------------------------------------------------->
+      
+    
+        <div id="loginPopup" class="popup">
+            <div class="popup-content">
+                <span class="close" id="closeBtn">&times;</span>
+                
+                <form id="loginForm" class="form-register">
+                  <h3>Login Form</h3>
+                  <input type="text" class="input-field" placeholder="User Id" required>
+                  <input type="email" class="input-field" placeholder="Email Id" required>
+                  <input type="password" class="input-field" placeholder="Enter Password" required>
+                  <input type="password" class="input-field" placeholder="Confirm Password" required>
+                  <input type="checkbox" class="chech-box" ><span>I agree to the terms & conditions</span>
+                  <button type="submit" class="submit-btn">Register</button>
+                </form>
+            </div>
+        </div>
+    </div>
+          <!----------------------------------------------------- Footer ------------------------------------------>
+    <footer class="footer" >
+      <div class="container-1">
+        <div class="row">
+          <div class="f-col">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="#">About-us</a></li>
+              <li><a href="#">Our Services</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Affiliate Program</a></li>
+            </ul>
+          </div>
+          <div class="f-col">
+            <h4>Get Help</h4>
+            <ul>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Shipping</a></li>
+              <li><a href="#">Return</a></li>
+              <li><a href="#">Trip Status</a></li>
+              <li><a href="#">Payment Option</a></li>
+            </ul>
+          </div>
+          <div class="f-col">
+            <h4>Booking Hotel</h4>
+            <ul>
+              <li><a href="#">Hotel Services</a></li>
+              <li><a href="#">Food </a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Affiliate Program</a></li>
+            </ul>
+          </div>
+          <div class="f-col">
+            <h4>Follow Us</h4>
+            <div class="social">
+              <a href="https://www.facebook.com/"><img src="social media/facebook.svg" ></a>
+              <a href=""><img src="social media/square-instagram.svg"></a>
+              <a href=""><img src="social media/x-twitter.svg"></a>
+              <a href=""><img src="social media/youtube.svg"></a>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    document.getElementById("loginBtn").onclick = function () {
+    document.getElementById("loginPopup").style.display = "block";
+};
+
+document.getElementById("closeBtn").onclick = function () {
+    document.getElementById("loginPopup").style.display = "none";
+};
+
+window.onclick = function (event) {
+    var popup = document.getElementById("loginPopup");
+    if (event.target === popup) {
+        popup.style.display = "none";
+    }
+};
+
+function submitForm() {
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+
+    // Add your login logic here
+    // For demonstration purposes, just displaying the input values
+    alert("Username: " + username + "\nPassword: " + password);
+
+    // Close the popup after submitting the form
+    document.getElementById("loginPopup").style.display = "none";
+}
+
+
+var swiper = new Swiper(".mySwiper", {
+      effect: "coverflow",
+      grabCursor: true,
+      loop: true,
+      centeredSlides: true,
+      slidesPerView: "auto",
+      coverflowEffect: {
+        rotate: 40,
+        stretch: 0,
+        depth: 100,
+        modifier: 1,
+        slideShadows: true,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+      },
+    });
+  
+
+  
+  </script>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+  </body>
+</html>
